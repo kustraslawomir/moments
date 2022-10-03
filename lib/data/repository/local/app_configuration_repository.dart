@@ -11,17 +11,22 @@ class AppConfigurationRepository {
   SharedPreferences? _prefs;
 
   Future<SharedPreferences> _preferences() async {
+    if (_prefs != null) {
+      return Future<SharedPreferences>.value(_prefs);
+    }
     return SharedPreferences.getInstance();
   }
 
   Future<void> storeBoolean({required String key, required bool value}) async {
-    _prefs ??= await _preferences();
-    _prefs?.setBool(key, value);
+    await _preferences().then((SharedPreferences preferences) {
+      preferences.setBool(key, value);
+    });
   }
 
   Future<bool> getBoolean(
       {required String key, required bool defaultValue}) async {
-    _prefs ??= await _preferences();
-    return _prefs?.getBool(key) ?? defaultValue;
+    return _preferences().then((SharedPreferences preferences) {
+      return preferences.getBool(key) ?? defaultValue;
+    });
   }
 }

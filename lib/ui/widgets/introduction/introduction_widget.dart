@@ -15,9 +15,7 @@ class IntroductionWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return IntroductionScreen(
       pages: _getPages(),
-      onDone: () {
-        _presenter.disableIntroduction();
-      },
+      onDone: _presenter.disableIntroduction,
       showBackButton: true,
       next: const Icon(Icons.navigate_next),
       back: const Icon(Icons.arrow_back),
