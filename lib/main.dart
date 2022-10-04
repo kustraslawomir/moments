@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'i18n/strings.g.dart';
+import 'ui/widgets/home_page/home_page_widget.dart';
 import 'ui/widgets/introduction/introduction_presenter.dart';
 import 'ui/widgets/introduction/introduction_presenter_impl.dart';
 import 'ui/widgets/introduction/introduction_widget.dart';
@@ -32,7 +33,7 @@ class MomentsApp extends StatelessWidget {
               if (snapshot.data ?? false) {
                 return IntroductionWidget();
               } else {
-                return const Text('lool');
+                return const HomePageWidget();
               }
             }));
   }

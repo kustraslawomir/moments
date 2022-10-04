@@ -3,6 +3,7 @@ import 'package:introduction_screen/introduction_screen.dart';
 
 import '../../../i18n/strings.g.dart';
 import '../../styles/styles.dart';
+import '../home_page/home_page_widget.dart';
 import 'introduction_presenter.dart';
 import 'introduction_presenter_impl.dart';
 
@@ -15,7 +16,13 @@ class IntroductionWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return IntroductionScreen(
       pages: _getPages(),
-      onDone: _presenter.disableIntroduction,
+      onDone: () {
+        _presenter.disableIntroduction();
+        Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(builder: (_) => const HomePageWidget()),
+            (_) => false);
+      },
       showBackButton: true,
       next: const Icon(Icons.navigate_next),
       back: const Icon(Icons.arrow_back),
