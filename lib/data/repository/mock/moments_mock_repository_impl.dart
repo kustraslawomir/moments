@@ -1,13 +1,8 @@
 import '../../models/moment.dart';
+import '../moments/moments_repository.dart';
 import 'mock_data.dart';
 
-abstract class MomentsMockRepository {
-  Future<List<Moment>> get10MomentsBeforeId(int id);
-
-  Future<List<Moment>> getDefaultMoments();
-}
-
-class MomentsMockRepositoryImpl extends MomentsMockRepository {
+class MomentsMockRepositoryImpl extends MomentsRepository {
   @override
   Future<List<Moment>> getDefaultMoments() async {
     return _getRandomMoments();
@@ -31,14 +26,14 @@ class MomentsMockRepositoryImpl extends MomentsMockRepository {
           id: generateId(),
           title: mockTitle1,
           description: mockDescription,
-          videoPath: videoPath1,
+          videoPath: videoPaths[0],
           dateTime: currentDateTime));
 
       moments.add(Moment(
           id: generateId(),
           title: mockTitle2,
           description: mockDescription,
-          videoPath: videoPath2,
+          videoPath: videoPaths[1],
           dateTime: currentDateTime));
     }
     return moments;

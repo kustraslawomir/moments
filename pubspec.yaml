@@ -20,8 +20,10 @@ dependencies:
   flutter_svg: 1.1.5
   equatable: 2.0.5
   flutter_gen: 5.0.1
+  video_player: 2.4.7
+  scroll_snap_list: 0.9.1
 
-  #system
+#system
   flutter_local_notifications: 11.0.1
   permission_handler: 10.0.2
   path_provider: 2.0.11
