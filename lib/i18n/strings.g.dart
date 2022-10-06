@@ -3,9 +3,9 @@
  * Generated file. Do not edit.
  *
  * Locales: 2
- * Strings: 10 (5.0 per locale)
+ * Strings: 14 (7.0 per locale)
  *
- * Built on 2022-09-30 at 14:18 UTC
+ * Built on 2022-10-06 at 13:38 UTC
  */
 
 import 'package:flutter/widgets.dart';
@@ -313,6 +313,8 @@ class _StringsEn {
 	String get tutorial_page_title_2 => 'This text is in english 2';
 	String get tutorial_page_message_2 => 'This text is in english 2';
 	String get done => 'Done';
+	String get read_more => 'Read more';
+	String get collapse => 'Collapse';
 }
 
 // Path: <root>
@@ -336,6 +338,8 @@ class _StringsPl implements _StringsEn {
 	@override String get tutorial_page_title_2 => 'Ten tekst jest w języku polskim 2';
 	@override String get tutorial_page_message_2 => 'Ten tekst jest w języku polskim 2';
 	@override String get done => 'Gotowe';
+	@override String get read_more => 'Pokaż więcej';
+	@override String get collapse => 'Zwiń';
 }
 
 /// Flat map(s) containing all translations.
@@ -349,6 +353,8 @@ extension on _StringsEn {
 			'tutorial_page_title_2': 'This text is in english 2',
 			'tutorial_page_message_2': 'This text is in english 2',
 			'done': 'Done',
+			'read_more': 'Read more',
+			'collapse': 'Collapse',
 		};
 	}
 }
@@ -361,6 +367,8 @@ extension on _StringsPl {
 			'tutorial_page_title_2': 'Ten tekst jest w języku polskim 2',
 			'tutorial_page_message_2': 'Ten tekst jest w języku polskim 2',
 			'done': 'Gotowe',
+			'read_more': 'Pokaż więcej',
+			'collapse': 'Zwiń',
 		};
 	}
 }

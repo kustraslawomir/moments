@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../moments/moments_pager_widget.dart';
+import '../moments/pager/moments_pager_widget.dart';
 
 class HomePageWidget extends StatefulWidget {
   const HomePageWidget({super.key});
