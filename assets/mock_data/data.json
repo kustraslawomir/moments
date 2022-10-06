@@ -1,0 +1,23 @@
+[
+  {
+    "id": 0,
+    "title": "Reading",
+    "description": "Want to escape without traveling anywhere? Looking to learn about a specific subject? Interested in knowing what it was like to live in the past? Reading can provide all of this and more for you! For anyone who wonders, “why is reading important?” we’re here to share the many reasons.",
+    "videoPath": "https://assets.mixkit.co/videos/preview/mixkit-young-woman-lying-on-a-sofa-reading-a-book-4949-large.mp4",
+    "dateTime": "2022-10-04"
+  },
+  {
+    "id": 0,
+    "title": "Yoga",
+    "description": "Aside from the physical benefits, one of the best benefits of yoga is how it helps a person manage stress, which is known to have devastating effects on the body and mind.",
+    "videoPath": "https://assets.mixkit.co/videos/preview/mixkit-meditating-peacefully-in-yoga-pose-at-home-32633-large.mp4",
+    "dateTime": "2022-10-05"
+  },
+  {
+    "id": 0,
+    "title": "Stretching",
+    "description": "Stretching keeps the muscles flexible, strong, and healthy, and we need that flexibility to maintain a range of motion in the joints. Without it, the muscles shorten and become tight. Then, when you call on the muscles for activity, they are weak and unable to extend all the way.",
+    "videoPath": "https://assets.mixkit.co/videos/preview/mixkit-girl-doing-stretching-indoors-4942-large.mp4",
+    "dateTime": "2022-10-06"
+  }
+]

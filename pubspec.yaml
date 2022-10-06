@@ -20,11 +20,11 @@ dependencies:
   flutter_svg: 1.1.5
   equatable: 2.0.5
   flutter_gen: 5.0.1
-  video_player: 2.4.7
   scroll_snap_list: 0.9.1
   readmore: 2.2.0
+  cached_video_player: ^2.0.3
 
-#system
+  #system
   flutter_local_notifications: 11.0.1
   permission_handler: 10.0.2
   path_provider: 2.0.11
@@ -36,6 +36,7 @@ dependencies:
   #data
   shared_preferences: 2.0.15
   sqflite: 2.1.0
+  json_serializable: ^6.4.1
 
   #state
   flutter_bloc: 8.1.1
@@ -54,4 +55,5 @@ flutter:
     - assets/images/
     - assets/icons/
     - assets/videos/
+    - assets/mock_data/
     - lib/i18n/

@@ -1,6 +1,9 @@
+import 'dart:convert';
+
+import 'package:flutter/services.dart' show rootBundle;
+
 import '../../models/moment.dart';
 import '../moments/moments_repository.dart';
-import 'mock_data.dart';
 
 class MomentsMockRepositoryImpl extends MomentsRepository {
   @override
@@ -17,25 +20,16 @@ class MomentsMockRepositoryImpl extends MomentsRepository {
     return _getRandomMoments();
   }
 
-  List<Moment> _getRandomMoments() {
-    final DateTime currentDateTime = DateTime.now();
-    final List<Moment> moments = List<Moment>.empty(growable: true);
+  Future<List<Moment>> _getRandomMoments() async {
+    final String data = await _loadData();
+    final List<dynamic> list = json.decode(data) as List<dynamic>;
+    return list
+        .map((dynamic element) =>
+            Moment.fromJson(element as Map<String, dynamic>))
+        .toList();
+  }
 
-    for (int i = 0; i < 5; i++) {
-      moments.add(Moment(
-          id: generateId(),
-          title: mockTitle1,
-          description: mockDescription,
-          videoPath: videoPaths[0],
-          dateTime: currentDateTime));
-
-      moments.add(Moment(
-          id: generateId(),
-          title: mockTitle2,
-          description: mockDescription,
-          videoPath: videoPaths[1],
-          dateTime: currentDateTime));
-    }
-    return moments;
+  Future<String> _loadData() async {
+    return rootBundle.loadString('assets/mock_data/data.json');
   }
 }
