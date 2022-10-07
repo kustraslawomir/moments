@@ -30,6 +30,6 @@ class MomentsMockRepositoryImpl extends MomentsRepository {
   }
 
   Future<String> _loadData() async {
-    return rootBundle.loadString('assets/mock_data/data.json');
+    return rootBundle.loadString('assets/mock_data/moments_local_data.json');
   }
 }

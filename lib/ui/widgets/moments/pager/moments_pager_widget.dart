@@ -11,6 +11,8 @@ import '../moments_presenter.dart';
 import '../moments_presenter_impl.dart';
 import '../moments_source.dart';
 import '../page/moment_page_view.dart';
+import '../pager_navigation/pager_navigate_up_widget.dart';
+import 'snap_position_source.dart';
 
 class MomentsPagerWidget extends StatefulWidget {
   const MomentsPagerWidget({super.key});
@@ -39,33 +41,39 @@ class MomentsPagerState extends State<MomentsPagerWidget> {
         providers: <ChangeNotifierProvider<ChangeNotifier>>[
           ChangeNotifierProvider<MomentsSource>(
               create: (_) => _momentsPresenter.getMomentsSource()),
+          ChangeNotifierProvider<SnapPositionSource>(
+              create: (_) => _momentsPresenter.getCurrentSnapPositionSource()),
           ChangeNotifierProvider<CurrentVideoUrlSource>(
               create: (_) => _videoPlayerPresenter.getCurrentVideoUrlSource())
         ],
-        child: Consumer<MomentsSource>(builder: (_, MomentsSource source, __) {
-          final List<Moment> moments = source.getMoments();
-
-          return ScrollSnapList(
-              itemBuilder: (_, int index) {
-                return MomentPageView(moment: source.getMoments()[index]);
-              },
-              onItemFocus: (int index) {
-                _updateCurrentVideoUrl(moments[index].videoPath);
-              },
-              itemSize: MediaQuery.of(context).size.height,
-              selectedItemAnchor: SelectedItemAnchor.START,
-              scrollDirection: Axis.vertical,
-              itemCount: moments.length,
-              key: sslKey);
+        child: Consumer<MomentsSource>(
+            builder: (_, MomentsSource momentsSource, __) {
+          final List<Moment> moments = momentsSource.getMoments();
+          return FutureBuilder<int>(
+              future: _momentsPresenter.getInitialSnapPosition(),
+              builder: (BuildContext context, AsyncSnapshot<int> snapshot) {
+                return Stack(children: <Widget>[
+                  ScrollSnapList(
+                      onItemFocus: (int index) {
+                        _momentsPresenter.updateCurrentSnapPosition(index);
+                        _momentsPresenter.storeSnapPosition(index);
+                        _videoPlayerPresenter
+                            .updateCurrentVideoUrl(moments[index].videoPath);
+                      },
+                      itemBuilder: (_, int index) => MomentPageView(
+                          moment: momentsSource.getMoments()[index]),
+                      initialIndex: snapshot.data?.toDouble() ?? 0,
+                      itemSize: MediaQuery.of(context).size.height,
+                      scrollDirection: Axis.vertical,
+                      itemCount: moments.length,
+                      key: sslKey),
+                  PagerNavigateUpWidget(onPressedButton: () => _focusToItem(0))
+                ]);
+              });
         }));
   }
 
-  @override
-  void dispose() {
-    super.dispose();
-  }
-
-  void _updateCurrentVideoUrl(String videoUrl) {
-    _videoPlayerPresenter.updateCurrentVideoUrl(videoUrl);
+  void _focusToItem(int index) {
+    sslKey.currentState?.focusToItem(index);
   }
 }

@@ -4,8 +4,8 @@ import 'package:readmore/readmore.dart';
 
 import '../../../../data/models/moment.dart';
 import '../../../../i18n/strings.g.dart';
-import '../../../styles/dimensions.dart';
 import '../../../styles/styles.dart';
+import '../../../utils/date_utils.dart';
 import '../../../utils/ui_settings.dart';
 import '../../video_player/current_video_url_source.dart';
 import '../../video_player/video_player_widget.dart';
@@ -30,17 +30,19 @@ class MomentPageView extends StatelessWidget {
                 play: source.getCurrentVideoUrl() == moment.videoPath);
           }),
           Opacity(
-              opacity: 0.7,
+              opacity: 1,
               child: Padding(
                   padding: const EdgeInsets.only(
                       left: DEFAULT_PADDING,
                       right: DEFAULT_PADDING,
-                      bottom: DEFAULT_PADDING),
+                      bottom: DEFAULT_PADDING * 3),
                   child: Column(
                       mainAxisAlignment: MainAxisAlignment.end,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Text(moment.title, style: momentCardTitleTextStyle),
+                        Text(moment.dateTime.toUiDate(),
+                            style: momentCardDateTextStyle),
                         const SizedBox(height: DEFAULT_PADDING),
                         ReadMoreText(moment.description,
                             trimMode: TrimMode.Line,

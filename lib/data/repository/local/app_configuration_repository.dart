@@ -29,4 +29,16 @@ class AppConfigurationRepository {
       return preferences.getBool(key) ?? defaultValue;
     });
   }
+
+  Future<void> storeInt({required String key, required int value}) async {
+    await _preferences().then((SharedPreferences preferences) {
+      preferences.setInt(key, value);
+    });
+  }
+
+  Future<int> getInt({required String key, required int defaultValue}) async {
+    return _preferences().then((SharedPreferences preferences) {
+      return preferences.getInt(key) ?? defaultValue;
+    });
+  }
 }
