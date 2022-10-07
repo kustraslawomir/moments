@@ -2,7 +2,7 @@
   {
     "id": 0,
     "title": "Reading",
-    "description": "Want to escape without traveling anywhere? Looking to learn about a specific subject? Interested in knowing what it was like to live in the past? Reading can provide all of this and more for you! For anyone who wonders, “why is reading important?” we’re here to share the many reasons.",
+    "description": "Want to escape without traveling anywhere? Looking to learn about a specific subject? Interested in knowing what it was like to live in the past? Reading can provide all of this and more for you! For anyone who wonders, “why is reading important?” we’re here to share the many reasons.\n\n[+3593 ms] D/BufferPoolAccessor2.0(12257): bufferpool2 0xb40000731f6b7208 : 4(29360128 size) total buffers - 4(29360128 size) used buffers - 0/4 (recycle/alloc) - 4/783 (fetch/transfer) END",
     "videoPath": "https://assets.mixkit.co/videos/preview/mixkit-young-woman-lying-on-a-sofa-reading-a-book-4949-large.mp4",
     "dateTime": "2022-10-04"
   },
