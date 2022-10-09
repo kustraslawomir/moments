@@ -5,7 +5,7 @@ const double DEFAULT_PADDING = 16;
 
 //OPACITY
 const double VIDEO_PLAYER_OPACITY = 0.6;
-const double DOUBLE_TAP_LIKE_OPACITY = 0.2;
+const double DOUBLE_TAP_LIKE_OPACITY = 0.1;
 
 //COLORS
 const Color READ_MORE_COLOR = Colors.blue;
