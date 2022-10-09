@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart' show rootBundle;
 
+import '../../../../gen/assets.gen.dart';
 import '../../../models/moment.dart';
 import '../../local/database/moments_database.dart';
 import '../moments_repository.dart';
@@ -35,6 +36,6 @@ class MomentsMockRepositoryImpl extends MomentsRepository {
   }
 
   Future<String> _loadData() async {
-    return rootBundle.loadString('assets/mock_data/moments_local_data.json');
+    return rootBundle.loadString(Assets.mockData.momentsLocalData);
   }
 }

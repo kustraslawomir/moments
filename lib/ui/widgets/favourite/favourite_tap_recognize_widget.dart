@@ -3,6 +3,7 @@ import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 
 import '../../../data/models/moment.dart';
+import '../../../gen/assets.gen.dart';
 import '../../utils/ui_settings.dart';
 import '../moments/moments_source.dart';
 import 'favourite_presenter.dart';
@@ -46,7 +47,7 @@ class FavouriteTapRecognizeState extends State<FavouriteTapRecognizeWidget>
         child: GestureDetector(
             behavior: HitTestBehavior.translucent,
             child: Lottie.asset(
-              DOUBLE_TAP_ANIMATION_PATH,
+              Assets.animation.doubleTapAnimationWhite,
               controller: _controller,
               onLoaded: (LottieComposition composition) {
                 _controller.duration = composition.duration;
