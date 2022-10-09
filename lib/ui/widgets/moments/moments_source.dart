@@ -35,4 +35,11 @@ class MomentsSource with ChangeNotifier {
       return MomentsRepositoryImpl();
     }
   }
+
+  void updateMoment(Moment moment) {
+    final int index =
+        _moments.indexWhere((Moment element) => element.id == moment.id);
+    _moments[index] = moment;
+    notifyListeners();
+  }
 }

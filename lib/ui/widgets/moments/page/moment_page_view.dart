@@ -7,6 +7,7 @@ import '../../../../i18n/strings.g.dart';
 import '../../../styles/styles.dart';
 import '../../../utils/date_utils.dart';
 import '../../../utils/ui_settings.dart';
+import '../../favourite/favourite_button_widget.dart';
 import '../../video_player/current_video_url_source.dart';
 import '../../video_player/video_player_widget.dart';
 
@@ -40,7 +41,12 @@ class MomentPageView extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.end,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Text(moment.title, style: momentCardTitleTextStyle),
+                        Row(children: <Widget>[
+                          Expanded(
+                              child: Text(moment.title,
+                                  style: momentCardTitleTextStyle)),
+                          FavouriteButtonWidget(moment: moment)
+                        ]),
                         Text(moment.dateTime.toUiDate(),
                             style: momentCardDateTextStyle),
                         const SizedBox(height: DEFAULT_PADDING),
