@@ -23,6 +23,7 @@ dependencies:
   scroll_snap_list: 0.9.1
   readmore: 2.2.0
   cached_video_player: ^2.0.3
+  lottie: ^1.4.3
 
   #system
   flutter_local_notifications: 11.0.1
@@ -56,4 +57,5 @@ flutter:
     - assets/icons/
     - assets/videos/
     - assets/mock_data/
+    - assets/animation/
     - lib/i18n/

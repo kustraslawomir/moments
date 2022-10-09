@@ -8,6 +8,7 @@ import '../../../styles/styles.dart';
 import '../../../utils/date_utils.dart';
 import '../../../utils/ui_settings.dart';
 import '../../favourite/favourite_button_widget.dart';
+import '../../favourite/favourite_tap_recognize_widget.dart';
 import '../../video_player/current_video_url_source.dart';
 import '../../video_player/video_player_widget.dart';
 
@@ -30,6 +31,7 @@ class MomentPageView extends StatelessWidget {
                 videoUrl: moment.videoPath,
                 play: source.getCurrentVideoUrl() == moment.videoPath);
           }),
+          FavouriteTapRecognizeWidget(moment: moment),
           Opacity(
               opacity: 1,
               child: Padding(

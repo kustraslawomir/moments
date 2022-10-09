@@ -27,9 +27,9 @@ class FavouriteButtonWidget extends StatelessWidget {
 
   IconData _getIcon(bool favourite) {
     if (favourite) {
-      return Icons.favorite;
+      return Icons.favorite_rounded;
     } else {
-      return Icons.favorite_border_outlined;
+      return Icons.favorite_outline_rounded;
     }
   }
 }

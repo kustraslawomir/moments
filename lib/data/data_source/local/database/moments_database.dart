@@ -71,7 +71,7 @@ class MomentsDatabase {
 
   Future<List<Moment>> readMoments() async {
     final Database database = await instance.database;
-    final String orderBy = '${MomentsFields.dateTime} ASC';
+    final String orderBy = '${MomentsFields.dateTime} DESC';
 
     final List<Map<String, Object?>> maps = await database.query(MOMENTS_TABLE,
         columns: MomentsFields.values, orderBy: orderBy);

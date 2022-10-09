@@ -27,6 +27,7 @@ class Moment {
   final bool favourite;
 
   static bool _boolFromInt(int done) => done == 1;
+
   static int _boolToInt(bool done) => done ? 1 : 0;
 
   Moment copy(
