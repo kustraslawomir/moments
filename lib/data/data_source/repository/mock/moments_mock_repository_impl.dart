@@ -2,8 +2,9 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart' show rootBundle;
 
-import '../../models/moment.dart';
-import '../moments/moments_repository.dart';
+import '../../../models/moment.dart';
+import '../../local/database/moments_database.dart';
+import '../moments_repository.dart';
 
 class MomentsMockRepositoryImpl extends MomentsRepository {
   @override
@@ -23,10 +24,14 @@ class MomentsMockRepositoryImpl extends MomentsRepository {
   Future<List<Moment>> _getRandomMoments() async {
     final String data = await _loadData();
     final List<dynamic> list = json.decode(data) as List<dynamic>;
-    return list
+    final List<Moment> moments = list
         .map((dynamic element) =>
             Moment.fromJson(element as Map<String, dynamic>))
         .toList();
+
+    final MomentsDatabase momentsDatabase = MomentsDatabase.instance;
+    moments.forEach((Moment element) => momentsDatabase.create(element));
+    return momentsDatabase.readMoments();
   }
 
   Future<String> _loadData() async {

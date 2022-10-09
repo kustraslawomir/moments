@@ -1,5 +1,5 @@
-import '../../../data/repository/local/app_configuration_repository.dart';
-import '../../../data/repository/local/configuration_keys.dart';
+import '../../../data/constants/preference_keys.dart';
+import '../../../data/preferences/app_preferences_repository.dart';
 import 'moments_presenter.dart';
 import 'moments_source.dart';
 import 'pager/snap_position_source.dart';
@@ -25,13 +25,13 @@ class MomentsPresenterImpl extends MomentsPresenter {
 
   @override
   Future<int> getInitialSnapPosition() {
-    return AppConfigurationRepository.instance
+    return AppPreferencesRepository.instance
         .getInt(key: ConfigurationKeys.SNAP_POSITION, defaultValue: 0);
   }
 
   @override
   void storeSnapPosition(int position) {
-    AppConfigurationRepository.instance
+    AppPreferencesRepository.instance
         .storeInt(key: ConfigurationKeys.SNAP_POSITION, value: position);
   }
 

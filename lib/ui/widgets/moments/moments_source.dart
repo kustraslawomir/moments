@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 
+import '../../../data/data_source/repository/mock/moments_mock_repository_impl.dart';
+import '../../../data/data_source/repository/moments_repository.dart';
+import '../../../data/data_source/repository/moments_repository_impl.dart';
 import '../../../data/models/moment.dart';
-import '../../../data/repository/mock/moments_mock_repository_impl.dart';
-import '../../../data/repository/moments/moments_repository.dart';
-import '../../../data/repository/moments/moments_repository_impl.dart';
-import '../../../data/settings/api_settings.dart';
+import '../../../data/preferences/settings.dart';
 
 class MomentsSource with ChangeNotifier {
   late final MomentsRepository _repository = _getRepository();

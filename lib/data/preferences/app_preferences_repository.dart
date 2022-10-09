@@ -1,12 +1,12 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
-class AppConfigurationRepository {
-  AppConfigurationRepository._privateConstructor();
+class AppPreferencesRepository {
+  AppPreferencesRepository._privateConstructor();
 
-  static final AppConfigurationRepository _instance =
-      AppConfigurationRepository._privateConstructor();
+  static final AppPreferencesRepository _instance =
+      AppPreferencesRepository._privateConstructor();
 
-  static AppConfigurationRepository get instance => _instance;
+  static AppPreferencesRepository get instance => _instance;
 
   SharedPreferences? _prefs;
 
