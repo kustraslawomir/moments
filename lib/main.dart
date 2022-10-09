@@ -41,7 +41,8 @@ class MomentsApp extends StatelessWidget {
 
   ThemeData _buildTheme(Brightness brightness) {
     final ThemeData baseTheme = ThemeData(
-        brightness: brightness, primarySwatch: CustomColors.colorAccent);
+        brightness: brightness,
+        primarySwatch: CustomColors.materialAccentColor);
     return baseTheme.copyWith(
       textTheme: GoogleFonts.poppinsTextTheme(baseTheme.textTheme),
     );

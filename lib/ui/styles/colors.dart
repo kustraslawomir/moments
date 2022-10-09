@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
+const Color customAccentColor = Color.fromRGBO(170, 240, 209, 1);
+
 class CustomColors {
-  static MaterialColor colorAccent =
-      createMaterialColor(const Color.fromRGBO(170, 240, 209, 1));
+  static MaterialColor materialAccentColor =
+      createMaterialColor(customAccentColor);
 
   static MaterialColor createMaterialColor(Color color) {
     List strengths = <double>[.05];

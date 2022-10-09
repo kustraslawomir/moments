@@ -13,14 +13,17 @@ class PagerNavigateUpWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Align(
         alignment: AlignmentDirectional.bottomEnd,
-        child: Consumer<SnapPositionSource>(
-            builder: (_, SnapPositionSource snapPositionSource, __) {
-          return Visibility(
-              visible: snapPositionSource.getCurrentSnapPosition() >=
-                  NAVIGATE_UP_SNAP_INDEX_VISIBILITY,
-              child: IconButton(
-                  icon: const Icon(Icons.keyboard_arrow_up, size: 24),
-                  onPressed: () => onPressedButton()));
-        }));
+        child: Padding(
+            padding: const EdgeInsets.only(
+                right: MEDIUM_PADDING, bottom: EXTRA_SMALL_PADDING),
+            child: Consumer<SnapPositionSource>(
+                builder: (_, SnapPositionSource snapPositionSource, __) {
+              return Visibility(
+                  visible: snapPositionSource.getCurrentSnapPosition() >=
+                      NAVIGATE_UP_SNAP_INDEX_VISIBILITY,
+                  child: IconButton(
+                      icon: const Icon(Icons.keyboard_arrow_up, size: 32),
+                      onPressed: () => onPressedButton()));
+            })));
   }
 }
