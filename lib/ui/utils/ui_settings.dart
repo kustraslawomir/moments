@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 
 //MARGINS
 const double DEFAULT_PADDING = 16;
+const double MEDIUM_PADDING = 12;
+const double SMALL_PADDING = 8;
+const double EXTRA_SMALL_PADDING = 6;
 
 //OPACITY
 const double VIDEO_PLAYER_OPACITY = 0.6;

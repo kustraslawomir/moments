@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../data/models/moment.dart';
+import '../../styles/styles.dart';
+import '../../utils/ui_settings.dart';
 import '../moments/moments_source.dart';
 import 'favourite_presenter.dart';
 import 'favourite_presenter_impl.dart';
@@ -17,12 +19,15 @@ class FavouriteButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final MomentsSource source =
         Provider.of<MomentsSource>(context, listen: false);
-    return IconButton(
-        onPressed: () => _presenter.updateFavouriteState(
-            favourite: !moment.favourite,
-            moment: moment,
-            momentsSource: source),
-        icon: Icon(_getIcon(moment.favourite)));
+    return Padding(
+        padding: const EdgeInsets.only(right: SMALL_PADDING),
+        child: GestureDetector(
+            onTap: () => _presenter.updateFavouriteState(
+                favourite: !moment.favourite,
+                moment: moment,
+                momentsSource: source),
+            child: Icon(_getIcon(moment.favourite),
+                size: MOMENT_TITLE_FONT_SIZE)));
   }
 
   IconData _getIcon(bool favourite) {

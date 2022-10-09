@@ -43,12 +43,15 @@ class MomentPageView extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.end,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Row(children: <Widget>[
-                          Expanded(
-                              child: Text(moment.title,
-                                  style: momentCardTitleTextStyle)),
-                          FavouriteButtonWidget(moment: moment)
-                        ]),
+                        RichText(
+                            text: TextSpan(children: <InlineSpan>[
+                          WidgetSpan(
+                            child: FavouriteButtonWidget(moment: moment),
+                          ),
+                          TextSpan(
+                              text: moment.title,
+                              style: momentCardTitleTextStyle)
+                        ])),
                         Text(moment.dateTime.toUiDate(),
                             style: momentCardDateTextStyle),
                         const SizedBox(height: DEFAULT_PADDING),
