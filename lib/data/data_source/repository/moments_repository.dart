@@ -1,7 +1,9 @@
 import '../../models/moment.dart';
 
 abstract class MomentsRepository {
-  Future<List<Moment>> get10MomentsBeforeId(int id);
+  Future<void> syncMoments();
 
-  Future<List<Moment>> getDefaultMoments();
+  Future<List<Moment>> getCachedMoments();
+
+  Future<List<Moment>> get10MomentsBeforeId(int id);
 }

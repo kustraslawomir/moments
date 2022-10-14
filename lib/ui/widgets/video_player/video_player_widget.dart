@@ -27,8 +27,8 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
       if (widget.play) {
         _controller.setLooping(true);
         _controller.play();
+        setState(() {});
       }
-      setState(() {});
     });
   }
 

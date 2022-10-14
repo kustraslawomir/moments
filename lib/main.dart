@@ -31,11 +31,7 @@ class MomentsApp extends StatelessWidget {
             body: FutureBuilder<bool>(
                 future: _presenter.isIntroductionEnabled(),
                 builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
-                  if (snapshot.data ?? false) {
-                    return IntroductionWidget();
-                  } else {
-                    return const HomePageWidget();
-                  }
+                  return _buildWidget(snapshot);
                 })));
   }
 
@@ -44,7 +40,20 @@ class MomentsApp extends StatelessWidget {
         brightness: brightness,
         primarySwatch: CustomColors.materialAccentColor);
     return baseTheme.copyWith(
-      textTheme: GoogleFonts.poppinsTextTheme(baseTheme.textTheme),
+      textTheme: GoogleFonts.nunitoTextTheme(baseTheme.textTheme),
     );
+  }
+
+  Widget _buildWidget(AsyncSnapshot<bool> snapshot) {
+    final bool? isIntroductionEnabled = snapshot.data;
+    if (isIntroductionEnabled == null) {
+      return Container();
+    }
+
+    if (isIntroductionEnabled) {
+      return IntroductionWidget();
+    }
+
+    return const HomePageWidget();
   }
 }

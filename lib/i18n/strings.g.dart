@@ -5,7 +5,7 @@
  * Locales: 2
  * Strings: 14 (7.0 per locale)
  *
- * Built on 2022-10-09 at 16:45 UTC
+ * Built on 2022-10-11 at 11:40 UTC
  */
 
 import 'package:flutter/widgets.dart';

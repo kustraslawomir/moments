@@ -52,7 +52,7 @@ class MomentPageView extends StatelessWidget {
                               text: moment.title,
                               style: momentCardTitleTextStyle)
                         ])),
-                        Text(moment.dateTime.toUiDate(),
+                        Text(moment.dateTime.formatToAppDate(),
                             style: momentCardDateTextStyle),
                         const SizedBox(height: DEFAULT_PADDING),
                         ReadMoreText(moment.description,

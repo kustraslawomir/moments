@@ -29,16 +29,6 @@ class $AssetsAnimationGen {
   List<String> get values => [doubleTapAnimation, doubleTapAnimationWhite];
 }
 
-class $AssetsMockDataGen {
-  const $AssetsMockDataGen();
-
-  /// File path: assets/mock_data/moments_local_data.json
-  String get momentsLocalData => 'assets/mock_data/moments_local_data.json';
-
-  /// List of all assets
-  List<String> get values => [momentsLocalData];
-}
-
 class $LibI18nGen {
   const $LibI18nGen();
 
@@ -59,7 +49,6 @@ class Assets {
   Assets._();
 
   static const $AssetsAnimationGen animation = $AssetsAnimationGen();
-  static const $AssetsMockDataGen mockData = $AssetsMockDataGen();
   static const $LibGen lib = $LibGen();
 }
 

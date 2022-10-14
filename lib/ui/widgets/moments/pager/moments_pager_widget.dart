@@ -1,9 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:moments/ui/widgets/moments/pager/snap_position_source.dart';
 import 'package:provider/provider.dart';
 import 'package:scroll_snap_list/scroll_snap_list.dart';
 
 import '../../../../data/models/moment.dart';
+import '../../filters/filters_widget.dart';
 import '../../video_player/current_video_url_source.dart';
 import '../../video_player/video_player_presenter.dart';
 import '../../video_player/video_player_presenter_impl.dart';
@@ -12,7 +14,6 @@ import '../moments_presenter_impl.dart';
 import '../moments_source.dart';
 import '../page/moment_page_view.dart';
 import '../pager_navigation/pager_navigate_up_widget.dart';
-import 'snap_position_source.dart';
 
 class MomentsPagerWidget extends StatefulWidget {
   const MomentsPagerWidget({super.key});
@@ -53,6 +54,7 @@ class MomentsPagerState extends State<MomentsPagerWidget> {
               future: _momentsPresenter.getInitialSnapPosition(),
               builder: (BuildContext context, AsyncSnapshot<int> snapshot) {
                 return Stack(children: <Widget>[
+                  FilterWidget(),
                   ScrollSnapList(
                       onItemFocus: (int index) {
                         _momentsPresenter.updateCurrentSnapPosition(index);

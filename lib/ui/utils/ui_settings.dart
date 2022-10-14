@@ -9,7 +9,7 @@ const double SMALL_PADDING = 8;
 const double EXTRA_SMALL_PADDING = 6;
 
 //OPACITY
-const double VIDEO_PLAYER_OPACITY = 0.5;
+const double VIDEO_PLAYER_OPACITY = 0.4;
 const double DOUBLE_TAP_LIKE_OPACITY = 0.1;
 
 //COLORS

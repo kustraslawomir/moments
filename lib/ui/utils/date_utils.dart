@@ -1,7 +1,7 @@
 import 'package:intl/intl.dart';
 
 extension DateExtensions on DateTime {
-  String toUiDate() {
+  String formatToAppDate() {
     return DateFormat('yyyy-MM-dd').format(this);
   }
 }

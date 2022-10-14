@@ -15,7 +15,7 @@ class MomentsPresenterImpl extends MomentsPresenter {
 
   @override
   void loadMoments() {
-    _momentsSource.loadMoments();
+    _momentsSource.sync();
   }
 
   @override

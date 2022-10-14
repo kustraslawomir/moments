@@ -38,6 +38,9 @@ dependencies:
   shared_preferences: 2.0.15
   sqflite: 2.1.0
   json_serializable: ^6.4.1
+  dio: ^4.0.6
+  pretty_dio_logger: ^1.1.1
+  pocketbase: ^0.4.1
 
   #state
   flutter_bloc: 8.1.1
@@ -58,6 +61,5 @@ flutter:
     - assets/images/
     - assets/icons/
     - assets/videos/
-    - assets/mock_data/
     - assets/animation/
     - lib/i18n/
