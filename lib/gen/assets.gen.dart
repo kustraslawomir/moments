@@ -25,8 +25,12 @@ class $AssetsAnimationGen {
   String get doubleTapAnimationWhite =>
       'assets/animation/double_tap_animation_white.json';
 
+  /// File path: assets/animation/playfull_cat.json
+  String get playfullCat => 'assets/animation/playfull_cat.json';
+
   /// List of all assets
-  List<String> get values => [doubleTapAnimation, doubleTapAnimationWhite];
+  List<String> get values =>
+      [doubleTapAnimation, doubleTapAnimationWhite, playfullCat];
 }
 
 class $LibI18nGen {

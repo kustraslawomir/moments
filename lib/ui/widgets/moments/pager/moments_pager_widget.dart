@@ -7,6 +7,7 @@ import 'package:scroll_snap_list/scroll_snap_list.dart';
 import '../../../../data/filter/filter.dart';
 import '../../../../data/models/moment.dart';
 import '../../filters/filters_widget.dart';
+import '../../no_data/no_data_widget.dart';
 import '../../video_player/current_video_url_source.dart';
 import '../../video_player/video_player_presenter.dart';
 import '../../video_player/video_player_presenter_impl.dart';
@@ -51,23 +52,31 @@ class MomentsPagerState extends State<MomentsPagerWidget> {
         child: Consumer<MomentsSource>(
             builder: (_, MomentsSource momentsSource, __) {
           final List<Moment> moments = momentsSource.getMoments();
+          final bool initialized = momentsSource.isInitialized();
           return Stack(children: <Widget>[
-            ScrollSnapList(
-                onItemFocus: (int index) {
-                  _momentsPresenter.updateCurrentSnapPosition(index);
-                  _videoPlayerPresenter
-                      .updateCurrentVideoUrl(moments[index].videoPath);
-                },
-                itemBuilder: (_, int index) =>
-                    MomentPageView(moment: momentsSource.getMoments()[index]),
-                itemSize: MediaQuery.of(context).size.height,
-                scrollDirection: Axis.vertical,
-                itemCount: moments.length,
-                key: sslKey),
-            PagerNavigateUpWidget(onPressedButton: () => _focusToItem(0)),
+            if (moments.isNotEmpty) ...<Widget>[
+              ScrollSnapList(
+                  itemSize: MediaQuery.of(context).size.height,
+                  scrollDirection: Axis.vertical,
+                  itemCount: moments.length,
+                  key: sslKey,
+                  onItemFocus: (int index) {
+                    _momentsPresenter.updateCurrentSnapPosition(index);
+                    _videoPlayerPresenter
+                        .updateCurrentVideoUrl(moments[index].videoPath);
+                  },
+                  itemBuilder: (_, int index) {
+                    return MomentPageView(
+                        moment: momentsSource.getMoments()[index]);
+                  }),
+              PagerNavigateUpWidget(onPressedButton: () => _focusToItem(0))
+            ],
+            if (moments.isEmpty && initialized) ...<Widget>[
+              const NoDataWidget()
+            ],
             FilterWidget(onFilterSelected: (Filter filter) {
               _momentsPresenter.filterBy(filter);
-            }),
+            })
           ]);
         }));
   }

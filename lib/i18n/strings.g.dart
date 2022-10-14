@@ -3,9 +3,9 @@
  * Generated file. Do not edit.
  *
  * Locales: 2
- * Strings: 18 (9.0 per locale)
+ * Strings: 20 (10.0 per locale)
  *
- * Built on 2022-10-14 at 14:32 UTC
+ * Built on 2022-10-14 at 15:25 UTC
  */
 
 import 'package:flutter/widgets.dart';
@@ -317,6 +317,7 @@ class _StringsEn {
 	String get collapse => ' Collapse';
 	String get filter_all => 'All';
 	String get filter_favourites => 'Favourites';
+	String get no_filter_results => 'We don\'t have any results for the selected filter.\n\nTry another one or play with the kitty 😻';
 }
 
 // Path: <root>
@@ -344,6 +345,7 @@ class _StringsPl implements _StringsEn {
 	@override String get collapse => ' Collapse';
 	@override String get filter_all => 'All';
 	@override String get filter_favourites => 'Favourites';
+	@override String get no_filter_results => 'We don\'t have any results for the selected filter.\n\nTry another one or play with the kitty 😻';
 }
 
 /// Flat map(s) containing all translations.
@@ -361,6 +363,7 @@ extension on _StringsEn {
 			'collapse': ' Collapse',
 			'filter_all': 'All',
 			'filter_favourites': 'Favourites',
+			'no_filter_results': 'We don\'t have any results for the selected filter.\n\nTry another one or play with the kitty 😻',
 		};
 	}
 }
@@ -377,6 +380,7 @@ extension on _StringsPl {
 			'collapse': ' Collapse',
 			'filter_all': 'All',
 			'filter_favourites': 'Favourites',
+			'no_filter_results': 'We don\'t have any results for the selected filter.\n\nTry another one or play with the kitty 😻',
 		};
 	}
 }

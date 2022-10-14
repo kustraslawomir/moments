@@ -15,6 +15,10 @@ class MomentsSource with ChangeNotifier {
     return _filteredMoments;
   }
 
+  bool isInitialized() {
+    return _moments.isNotEmpty;
+  }
+
   Future<void> sync() async {
     _moments.clear();
     _filteredMoments.clear();
