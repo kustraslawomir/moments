@@ -5,5 +5,8 @@
   "tutorial_page_message_2": "This text is in english 2",
   "done" : "Done",
   "read_more" : " Read more",
-  "collapse" : " Collapse"
+  "collapse" : " Collapse",
+  "filter_all" : "All",
+  "filter_favourites" : "Favourites"
+
 }

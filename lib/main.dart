@@ -27,12 +27,11 @@ class MomentsApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         theme: _buildTheme(Brightness.dark),
-        home: Scaffold(
-            body: FutureBuilder<bool>(
-                future: _presenter.isIntroductionEnabled(),
-                builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
-                  return _buildWidget(snapshot);
-                })));
+        home: FutureBuilder<bool>(
+            future: _presenter.isIntroductionEnabled(),
+            builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
+              return _buildWidget(snapshot);
+            }));
   }
 
   ThemeData _buildTheme(Brightness brightness) {
@@ -40,8 +39,8 @@ class MomentsApp extends StatelessWidget {
         brightness: brightness,
         primarySwatch: CustomColors.materialAccentColor);
     return baseTheme.copyWith(
-      textTheme: GoogleFonts.nunitoTextTheme(baseTheme.textTheme),
-    );
+        textTheme: GoogleFonts.nunitoTextTheme(baseTheme.textTheme),
+        backgroundColor: Colors.black87);
   }
 
   Widget _buildWidget(AsyncSnapshot<bool> snapshot) {

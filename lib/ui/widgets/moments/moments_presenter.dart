@@ -1,3 +1,4 @@
+import '../../../data/filter/filter.dart';
 import 'moments_source.dart';
 import 'pager/snap_position_source.dart';
 
@@ -6,13 +7,9 @@ abstract class MomentsPresenter {
 
   void loadMoments();
 
-  void load10MomentsBefore(int id);
-
-  void storeSnapPosition(int position);
-
-  Future<int> getInitialSnapPosition();
-
   void updateCurrentSnapPosition(int snapPosition);
 
   SnapPositionSource getCurrentSnapPositionSource();
+
+  void filterBy(Filter filter);
 }

@@ -4,6 +4,7 @@ import 'package:moments/ui/widgets/moments/pager/snap_position_source.dart';
 import 'package:provider/provider.dart';
 import 'package:scroll_snap_list/scroll_snap_list.dart';
 
+import '../../../../data/filter/filter.dart';
 import '../../../../data/models/moment.dart';
 import '../../filters/filters_widget.dart';
 import '../../video_player/current_video_url_source.dart';
@@ -50,28 +51,24 @@ class MomentsPagerState extends State<MomentsPagerWidget> {
         child: Consumer<MomentsSource>(
             builder: (_, MomentsSource momentsSource, __) {
           final List<Moment> moments = momentsSource.getMoments();
-          return FutureBuilder<int>(
-              future: _momentsPresenter.getInitialSnapPosition(),
-              builder: (BuildContext context, AsyncSnapshot<int> snapshot) {
-                return Stack(children: <Widget>[
-                  FilterWidget(),
-                  ScrollSnapList(
-                      onItemFocus: (int index) {
-                        _momentsPresenter.updateCurrentSnapPosition(index);
-                        _momentsPresenter.storeSnapPosition(index);
-                        _videoPlayerPresenter
-                            .updateCurrentVideoUrl(moments[index].videoPath);
-                      },
-                      itemBuilder: (_, int index) => MomentPageView(
-                          moment: momentsSource.getMoments()[index]),
-                      initialIndex: snapshot.data?.toDouble() ?? 0,
-                      itemSize: MediaQuery.of(context).size.height,
-                      scrollDirection: Axis.vertical,
-                      itemCount: moments.length,
-                      key: sslKey),
-                  PagerNavigateUpWidget(onPressedButton: () => _focusToItem(0))
-                ]);
-              });
+          return Stack(children: <Widget>[
+            ScrollSnapList(
+                onItemFocus: (int index) {
+                  _momentsPresenter.updateCurrentSnapPosition(index);
+                  _videoPlayerPresenter
+                      .updateCurrentVideoUrl(moments[index].videoPath);
+                },
+                itemBuilder: (_, int index) =>
+                    MomentPageView(moment: momentsSource.getMoments()[index]),
+                itemSize: MediaQuery.of(context).size.height,
+                scrollDirection: Axis.vertical,
+                itemCount: moments.length,
+                key: sslKey),
+            PagerNavigateUpWidget(onPressedButton: () => _focusToItem(0)),
+            FilterWidget(onFilterSelected: (Filter filter) {
+              _momentsPresenter.filterBy(filter);
+            }),
+          ]);
         }));
   }
 

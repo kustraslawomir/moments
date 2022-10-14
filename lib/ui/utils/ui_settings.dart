@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../styles/colors.dart';
 
 //MARGINS
+const double BELOW_STATUS_BAR_PADDING = 42;
 const double DEFAULT_PADDING = 18;
 const double MEDIUM_PADDING = 14;
 const double SMALL_PADDING = 8;

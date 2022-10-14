@@ -3,9 +3,9 @@
  * Generated file. Do not edit.
  *
  * Locales: 2
- * Strings: 14 (7.0 per locale)
+ * Strings: 18 (9.0 per locale)
  *
- * Built on 2022-10-11 at 11:40 UTC
+ * Built on 2022-10-14 at 14:32 UTC
  */
 
 import 'package:flutter/widgets.dart';
@@ -315,6 +315,8 @@ class _StringsEn {
 	String get done => 'Done';
 	String get read_more => ' Read more';
 	String get collapse => ' Collapse';
+	String get filter_all => 'All';
+	String get filter_favourites => 'Favourites';
 }
 
 // Path: <root>
@@ -333,13 +335,15 @@ class _StringsPl implements _StringsEn {
 	@override late final _StringsPl _root = this; // ignore: unused_field
 
 	// Translations
-	@override String get tutorial_page_title_1 => 'Ten tekst jest w języku polskim 1';
-	@override String get tutorial_page_message_1 => 'Ten tekst jest w języku polskim 1';
-	@override String get tutorial_page_title_2 => 'Ten tekst jest w języku polskim 2';
-	@override String get tutorial_page_message_2 => 'Ten tekst jest w języku polskim 2';
-	@override String get done => 'Gotowe';
-	@override String get read_more => ' Pokaż więcej';
-	@override String get collapse => ' Zwiń';
+	@override String get tutorial_page_title_1 => 'This text is in english 1';
+	@override String get tutorial_page_message_1 => 'This text is in english 1';
+	@override String get tutorial_page_title_2 => 'This text is in english 2';
+	@override String get tutorial_page_message_2 => 'This text is in english 2';
+	@override String get done => 'Done';
+	@override String get read_more => ' Read more';
+	@override String get collapse => ' Collapse';
+	@override String get filter_all => 'All';
+	@override String get filter_favourites => 'Favourites';
 }
 
 /// Flat map(s) containing all translations.
@@ -355,6 +359,8 @@ extension on _StringsEn {
 			'done': 'Done',
 			'read_more': ' Read more',
 			'collapse': ' Collapse',
+			'filter_all': 'All',
+			'filter_favourites': 'Favourites',
 		};
 	}
 }
@@ -362,13 +368,15 @@ extension on _StringsEn {
 extension on _StringsPl {
 	Map<String, dynamic> _buildFlatMap() {
 		return <String, dynamic>{
-			'tutorial_page_title_1': 'Ten tekst jest w języku polskim 1',
-			'tutorial_page_message_1': 'Ten tekst jest w języku polskim 1',
-			'tutorial_page_title_2': 'Ten tekst jest w języku polskim 2',
-			'tutorial_page_message_2': 'Ten tekst jest w języku polskim 2',
-			'done': 'Gotowe',
-			'read_more': ' Pokaż więcej',
-			'collapse': ' Zwiń',
+			'tutorial_page_title_1': 'This text is in english 1',
+			'tutorial_page_message_1': 'This text is in english 1',
+			'tutorial_page_title_2': 'This text is in english 2',
+			'tutorial_page_message_2': 'This text is in english 2',
+			'done': 'Done',
+			'read_more': ' Read more',
+			'collapse': ' Collapse',
+			'filter_all': 'All',
+			'filter_favourites': 'Favourites',
 		};
 	}
 }

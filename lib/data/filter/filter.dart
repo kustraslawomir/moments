@@ -1,4 +1,6 @@
-enum MomentCategory {
+enum Filter {
+  ALL,
+  FAVOURITE,
   MENTAL_HEALTH,
   FULFILLMENT,
   AWARENESS,
