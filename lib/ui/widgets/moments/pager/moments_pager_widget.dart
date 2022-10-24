@@ -12,8 +12,8 @@ import '../../no_data/no_data_widget.dart';
 import '../../video_player/current_video_url_source.dart';
 import '../../video_player/video_player_presenter.dart';
 import '../../video_player/video_player_presenter_impl.dart';
+import '../filtered_moments/filtered_moments_pag./moments_source.dart';
 import '../filtered_moments/filtered_moments_page.dart';
-import '../moments_source.dart';
 import '../page/moment_page_view.dart';
 import '../pager_navigation/pager_navigate_up_widget.dart';
 import 'moments_pager_presenter_impl.dart';
@@ -70,7 +70,7 @@ class MomentsPagerState extends State<MomentsPagerWidget> {
               child: FilterWidget(onFilterSelected: (Filter filter) {
                 _openFilteredMomentsPage(
                     moments: _presenter.filter(filter, widget.moments),
-                    filterTag: filter.name);
+                    filterTag: _presenter.getFilterTag(filter));
               }))
         ]));
   }
@@ -81,9 +81,6 @@ class MomentsPagerState extends State<MomentsPagerWidget> {
 
   void _openFilteredMomentsPage(
       {required List<Moment> moments, required String filterTag}) {
-    final MomentsSource source =
-        Provider.of<MomentsSource>(context, listen: false);
-
     Navigator.push(
         context,
         MaterialPageRoute<FilteredMomentsPageWidget>(

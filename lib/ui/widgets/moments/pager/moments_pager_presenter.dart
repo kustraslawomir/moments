@@ -8,4 +8,6 @@ abstract class MomentsPagerPresenter {
   SnapPositionSource getCurrentSnapPositionSource();
 
   List<Moment> filter(Filter filter, List<Moment> moments);
+
+  String getFilterTag(Filter filter);
 }

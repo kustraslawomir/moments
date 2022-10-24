@@ -1,5 +1,6 @@
 import '../../../../data/filter/filter.dart';
 import '../../../../data/models/moment.dart';
+import '../../../../i18n/strings.g.dart';
 import 'moments_pager_presenter.dart';
 import 'snap_position_source.dart';
 
@@ -65,5 +66,33 @@ class MomentsPagerPresenterImpl extends MomentsPagerPresenter {
         break;
     }
     return filteredMoments;
+  }
+
+  @override
+  String getFilterTag(Filter filter) {
+    switch (filter) {
+      case Filter.FAVOURITE:
+        return t.filter_favourites;
+      case Filter.MENTAL_HEALTH:
+        return t.mental_health;
+      case Filter.FULFILLMENT:
+        return t.fulfillment;
+      case Filter.AWARENESS:
+        return t.awareness;
+      case Filter.JOY:
+        return t.joy;
+      case Filter.HABIT:
+        return t.habit;
+      case Filter.GOAL:
+        return t.goal;
+      case Filter.IMPROVEMENT:
+        return t.improvement;
+      case Filter.DISCOVERING:
+        return t.discovering;
+      case Filter.RELATIONSHIP:
+        return t.relationship;
+      case Filter.HEALTH:
+        return t.health;
+    }
   }
 }
