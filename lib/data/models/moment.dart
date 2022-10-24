@@ -1,5 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../../i18n/strings.g.dart';
+
 part 'moment.g.dart';
 
 @JsonSerializable()
@@ -91,5 +93,38 @@ class Moment {
         improvement: improvement ?? this.improvement,
         discovering: discovering ?? this.discovering,
         relationship: relationship ?? this.relationship);
+  }
+
+  String getMomentDescriptionWithCategoryTags() {
+    String descriptionWithCategoryTags = description;
+    descriptionWithCategoryTags += '\n\n';
+    if (mentalHealth) {
+      descriptionWithCategoryTags += ' ${t.mental_health}';
+    }
+    if (fulfillment) {
+      descriptionWithCategoryTags += ' ${t.fulfillment}';
+    }
+    if (awareness) {
+      descriptionWithCategoryTags += ' ${t.awareness}';
+    }
+    if (joy) {
+      descriptionWithCategoryTags += ' ${t.joy}';
+    }
+    if (habit) {
+      descriptionWithCategoryTags += ' ${t.habit}';
+    }
+    if (goal) {
+      descriptionWithCategoryTags += ' ${t.goal}';
+    }
+    if (improvement) {
+      descriptionWithCategoryTags += ' ${t.improvement}';
+    }
+    if (discovering) {
+      descriptionWithCategoryTags += ' ${t.discovering}';
+    }
+    if (relationship) {
+      descriptionWithCategoryTags += ' ${t.relationship}';
+    }
+    return descriptionWithCategoryTags;
   }
 }

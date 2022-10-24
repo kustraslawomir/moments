@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:moments/data/models/moment.dart';
+import 'package:moments/ui/styles/styles.dart';
+import 'package:moments/ui/utils/ui_settings.dart';
+import 'package:moments/ui/widgets/moments/moments_source.dart';
 import 'package:provider/provider.dart';
 
-import '../../../data/models/moment.dart';
-import '../../styles/styles.dart';
-import '../../utils/ui_settings.dart';
-import '../moments/moments_source.dart';
 import 'favourite_presenter.dart';
 import 'favourite_presenter_impl.dart';
 

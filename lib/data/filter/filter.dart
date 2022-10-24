@@ -1,5 +1,4 @@
 enum Filter {
-  ALL,
   FAVOURITE,
   MENTAL_HEALTH,
   FULFILLMENT,

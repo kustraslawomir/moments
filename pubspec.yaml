@@ -21,7 +21,6 @@ dependencies:
   equatable: 2.0.5
   flutter_gen: 5.0.1
   scroll_snap_list: 0.9.1
-  readmore: 2.2.0
   cached_video_player: ^2.0.3
   lottie: ^1.4.3
 

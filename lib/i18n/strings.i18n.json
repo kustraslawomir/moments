@@ -8,6 +8,16 @@
   "collapse" : " Collapse",
   "filter_all" : "All",
   "filter_favourites" : "Favourites",
-  "no_filter_results" : "We don't have any results for the selected filter.\n\nTry another one or play with the kitty 😻"
+  "no_filter_results" : "We don't have any results for the selected filter.\n\nTry another one or play with the kitty 😻",
+  "mental_health" : "#mental_health",
+  "fulfillment" : "#fulfillment",
+  "awareness" : "#awareness",
+  "joy" : "#joy",
+  "habit" : "#habit",
+  "goal" : "#goal",
+  "improvement" : "#improvement",
+  "discovering" : "#discovering",
+  "relationship" : "#relationship",
+  "health" : "#health"
 
 }

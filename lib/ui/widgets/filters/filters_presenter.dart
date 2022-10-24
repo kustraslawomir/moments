@@ -7,9 +7,18 @@ abstract class FiltersPresenter {
 }
 
 class FiltersPresenterImpl extends FiltersPresenter {
-  final List<MomentFilter> _filters = [
-    MomentFilter(filter: Filter.ALL, title: t.filter_all),
-    MomentFilter(filter: Filter.FAVOURITE, title: t.filter_favourites)
+  final List<MomentFilter> _filters = <MomentFilter>[
+    MomentFilter(filter: Filter.FAVOURITE, title: t.filter_favourites),
+    MomentFilter(filter: Filter.MENTAL_HEALTH, title: t.mental_health),
+    MomentFilter(filter: Filter.FULFILLMENT, title: t.fulfillment),
+    MomentFilter(filter: Filter.AWARENESS, title: t.awareness),
+    MomentFilter(filter: Filter.JOY, title: t.joy),
+    MomentFilter(filter: Filter.HABIT, title: t.habit),
+    MomentFilter(filter: Filter.GOAL, title: t.goal),
+    MomentFilter(filter: Filter.IMPROVEMENT, title: t.improvement),
+    MomentFilter(filter: Filter.DISCOVERING, title: t.discovering),
+    MomentFilter(filter: Filter.RELATIONSHIP, title: t.relationship),
+    MomentFilter(filter: Filter.HEALTH, title: t.health)
   ];
 
   @override

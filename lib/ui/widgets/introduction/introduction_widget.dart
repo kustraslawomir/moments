@@ -3,7 +3,7 @@ import 'package:introduction_screen/introduction_screen.dart';
 
 import '../../../i18n/strings.g.dart';
 import '../../styles/styles.dart';
-import '../home_page/home_page_widget.dart';
+import '../moments/moments_page.dart';
 import 'introduction_presenter.dart';
 import 'introduction_presenter_impl.dart';
 
@@ -20,7 +20,7 @@ class IntroductionWidget extends StatelessWidget {
         _presenter.disableIntroduction();
         Navigator.pushAndRemoveUntil(
             context,
-            MaterialPageRoute(builder: (_) => const HomePageWidget()),
+            MaterialPageRoute(builder: (_) => const MomentsPage()),
             (_) => false);
       },
       showBackButton: true,

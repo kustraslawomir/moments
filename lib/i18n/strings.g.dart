@@ -3,9 +3,9 @@
  * Generated file. Do not edit.
  *
  * Locales: 2
- * Strings: 20 (10.0 per locale)
+ * Strings: 40 (20.0 per locale)
  *
- * Built on 2022-10-14 at 15:25 UTC
+ * Built on 2022-10-24 at 18:35 UTC
  */
 
 import 'package:flutter/widgets.dart';
@@ -318,6 +318,16 @@ class _StringsEn {
 	String get filter_all => 'All';
 	String get filter_favourites => 'Favourites';
 	String get no_filter_results => 'We don\'t have any results for the selected filter.\n\nTry another one or play with the kitty 😻';
+	String get mental_health => '#mental_health';
+	String get fulfillment => '#fulfillment';
+	String get awareness => '#awareness';
+	String get joy => '#joy';
+	String get habit => '#habit';
+	String get goal => '#goal';
+	String get improvement => '#improvement';
+	String get discovering => '#discovering';
+	String get relationship => '#relationship';
+	String get health => '#health';
 }
 
 // Path: <root>
@@ -346,6 +356,16 @@ class _StringsPl implements _StringsEn {
 	@override String get filter_all => 'All';
 	@override String get filter_favourites => 'Favourites';
 	@override String get no_filter_results => 'We don\'t have any results for the selected filter.\n\nTry another one or play with the kitty 😻';
+	@override String get mental_health => '#mental_health';
+	@override String get fulfillment => '#fulfillment';
+	@override String get awareness => '#awareness';
+	@override String get joy => '#joy';
+	@override String get habit => '#habit';
+	@override String get goal => '#goal';
+	@override String get improvement => '#improvement';
+	@override String get discovering => '#discovering';
+	@override String get relationship => '#relationship';
+	@override String get health => '#health';
 }
 
 /// Flat map(s) containing all translations.
@@ -364,6 +384,16 @@ extension on _StringsEn {
 			'filter_all': 'All',
 			'filter_favourites': 'Favourites',
 			'no_filter_results': 'We don\'t have any results for the selected filter.\n\nTry another one or play with the kitty 😻',
+			'mental_health': '#mental_health',
+			'fulfillment': '#fulfillment',
+			'awareness': '#awareness',
+			'joy': '#joy',
+			'habit': '#habit',
+			'goal': '#goal',
+			'improvement': '#improvement',
+			'discovering': '#discovering',
+			'relationship': '#relationship',
+			'health': '#health',
 		};
 	}
 }
@@ -381,6 +411,16 @@ extension on _StringsPl {
 			'filter_all': 'All',
 			'filter_favourites': 'Favourites',
 			'no_filter_results': 'We don\'t have any results for the selected filter.\n\nTry another one or play with the kitty 😻',
+			'mental_health': '#mental_health',
+			'fulfillment': '#fulfillment',
+			'awareness': '#awareness',
+			'joy': '#joy',
+			'habit': '#habit',
+			'goal': '#goal',
+			'improvement': '#improvement',
+			'discovering': '#discovering',
+			'relationship': '#relationship',
+			'health': '#health',
 		};
 	}
 }
