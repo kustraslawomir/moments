@@ -1,7 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:moments/ui/widgets/moments/pager/moments_pager_presenter.dart';
-import 'package:moments/ui/widgets/moments/pager/snap_position_source.dart';
 import 'package:provider/provider.dart';
 import 'package:scroll_snap_list/scroll_snap_list.dart';
 
@@ -12,11 +9,12 @@ import '../../no_data/no_data_widget.dart';
 import '../../video_player/current_video_url_source.dart';
 import '../../video_player/video_player_presenter.dart';
 import '../../video_player/video_player_presenter_impl.dart';
-import '../filtered_moments/filtered_moments_pag./moments_source.dart';
 import '../filtered_moments/filtered_moments_page.dart';
 import '../page/moment_page_view.dart';
 import '../pager_navigation/pager_navigate_up_widget.dart';
+import 'moments_pager_presenter.dart';
 import 'moments_pager_presenter_impl.dart';
+import 'snap_position_source.dart';
 
 class MomentsPagerWidget extends StatefulWidget {
   const MomentsPagerWidget(
