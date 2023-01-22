@@ -18,6 +18,6 @@
   "improvement" : "#improvement",
   "discovering" : "#discovering",
   "relationship" : "#relationship",
-  "health" : "#health"
-
+  "health" : "#health",
+  "physical_health" : "#physical_health"
 }

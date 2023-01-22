@@ -1,2 +1,2 @@
-const int collapsedTextLength = 200;
+const int collapsedTextLength = 300;
 const int fadeInContentDurationMs = 2000;

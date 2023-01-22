@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 
-const String baseUrl = 'http://10.0.2.2:8090/';
+const String baseUrl = 'https://pocket.central-1.pl/';
 
 class DioClient {
   DioClient(this._dio) {

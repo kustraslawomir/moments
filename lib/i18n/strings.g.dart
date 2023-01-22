@@ -3,9 +3,9 @@
  * Generated file. Do not edit.
  *
  * Locales: 2
- * Strings: 40 (20.0 per locale)
+ * Strings: 42 (21.0 per locale)
  *
- * Built on 2022-10-24 at 18:35 UTC
+ * Built on 2022-10-28 at 06:10 UTC
  */
 
 import 'package:flutter/widgets.dart';
@@ -328,6 +328,7 @@ class _StringsEn {
 	String get discovering => '#discovering';
 	String get relationship => '#relationship';
 	String get health => '#health';
+	String get physical_health => '#physical_health';
 }
 
 // Path: <root>
@@ -366,6 +367,7 @@ class _StringsPl implements _StringsEn {
 	@override String get discovering => '#discovering';
 	@override String get relationship => '#relationship';
 	@override String get health => '#health';
+	@override String get physical_health => '#physical_health';
 }
 
 /// Flat map(s) containing all translations.
@@ -394,6 +396,7 @@ extension on _StringsEn {
 			'discovering': '#discovering',
 			'relationship': '#relationship',
 			'health': '#health',
+			'physical_health': '#physical_health',
 		};
 	}
 }
@@ -421,6 +424,7 @@ extension on _StringsPl {
 			'discovering': '#discovering',
 			'relationship': '#relationship',
 			'health': '#health',
+			'physical_health': '#physical_health',
 		};
 	}
 }

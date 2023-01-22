@@ -4,18 +4,21 @@ import 'package:provider/provider.dart';
 import '../../../../data/models/moment.dart';
 import '../../../styles/dimensions.dart';
 import '../../../styles/styles.dart';
-import '../../../utils/date_utils.dart';
 import '../../../utils/ui_settings.dart';
 import '../../favourite/favourite_button_widget.dart';
 import '../../favourite/favourite_tap_recognize_widget.dart';
+import '../../filters/filters_presenter.dart';
 import '../../moment_description/collapse_text.dart';
 import '../../video_player/current_video_url_source.dart';
 import '../../video_player/video_player_widget.dart';
+import '../tags/tags_widget.dart';
 
 class MomentPageView extends StatelessWidget {
-  const MomentPageView({super.key, required this.moment});
+  MomentPageView({super.key, required this.moment});
 
   final Moment moment;
+
+  final FiltersPresenter _presenter = FiltersPresenterImpl();
 
   @override
   Widget build(BuildContext context) {
@@ -57,12 +60,12 @@ class MomentPageView extends StatelessWidget {
                                     text: moment.title,
                                     style: momentCardTitleTextStyle)
                               ])),
-                              Text(moment.dateTime.formatToAppDate(),
-                                  style: momentCardDateTextStyle),
                               const SizedBox(height: DEFAULT_PADDING),
-                              MomentDescriptionText(
-                                  text: moment
-                                      .getMomentDescriptionWithCategoryTags())
+                              MomentDescriptionText(text: moment.description),
+                              const SizedBox(height: DEFAULT_PADDING),
+                              TagsWidget(
+                                  momentFilters: _presenter
+                                      .getFiltersMomentFilters(moment))
                             ])));
               })
         ]));

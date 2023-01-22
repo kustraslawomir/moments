@@ -30,7 +30,7 @@ class MomentsRepositoryImpl extends MomentsRepository {
     final String momentDate = await _getMomentFilterDate(_momentsDatabase);
 
     queries['filter'] =
-        "(date_time <= '$currentFilterDate}' && date_time > '$momentDate')";
+        "(created <= '$currentFilterDate}' && created > '$momentDate')";
 
     try {
       final Response<dynamic> response = await dioClient
@@ -50,8 +50,10 @@ class MomentsRepositoryImpl extends MomentsRepository {
               title: element.title,
               description: element.description,
               videoPath: element.videoPath,
-              dateTime: element.dateTime,
+              created: element.created,
+              updated: element.updated,
               mentalHealth: element.mentalHealth,
+              physicalHealth: element.physicalHealth,
               fulfillment: element.fulfillment,
               awareness: element.awareness,
               joy: element.joy,
@@ -71,7 +73,7 @@ class MomentsRepositoryImpl extends MomentsRepository {
 
   Future<String> _getMomentFilterDate(MomentsDatabase momentsDatabase) async {
     final Moment? lastStoredMoment = await momentsDatabase.readLastMoment();
-    final String momentDate = lastStoredMoment?.dateTime
+    final String momentDate = lastStoredMoment?.created
             .add(const Duration(days: 1))
             .formatToAppDate() ??
         '';

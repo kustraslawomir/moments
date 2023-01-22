@@ -1,7 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
 
-import '../../i18n/strings.g.dart';
-
 part 'moment.g.dart';
 
 @JsonSerializable()
@@ -11,9 +9,11 @@ class Moment {
     required this.title,
     required this.description,
     required this.videoPath,
-    required this.dateTime,
+    required this.created,
+    required this.updated,
     required this.favourite,
     required this.mentalHealth,
+    required this.physicalHealth,
     required this.fulfillment,
     required this.awareness,
     required this.joy,
@@ -34,12 +34,14 @@ class Moment {
   final String description;
   @JsonKey(name: 'video_path')
   final String videoPath;
-  @JsonKey(name: 'date_time')
-  final DateTime dateTime;
+  final DateTime created;
+  final DateTime updated;
   @JsonKey(fromJson: _boolFromInt, toJson: _boolToInt)
   final bool favourite;
   @JsonKey(name: 'mental_health', fromJson: _boolFromInt, toJson: _boolToInt)
   final bool mentalHealth;
+  @JsonKey(name: 'physical_health', fromJson: _boolFromInt, toJson: _boolToInt)
+  final bool physicalHealth;
   @JsonKey(fromJson: _boolFromInt, toJson: _boolToInt)
   final bool fulfillment;
   @JsonKey(fromJson: _boolFromInt, toJson: _boolToInt)
@@ -66,9 +68,12 @@ class Moment {
       String? title,
       String? description,
       String? videoPath,
+      DateTime? created,
+      DateTime? updated,
       DateTime? dateTime,
       bool? favourite,
       bool? mentalHealth,
+      bool? physicalHealth,
       bool? fulfillment,
       bool? awareness,
       bool? joy,
@@ -82,9 +87,11 @@ class Moment {
         title: title ?? this.title,
         description: description ?? this.description,
         videoPath: videoPath ?? this.videoPath,
-        dateTime: dateTime ?? this.dateTime,
+        created: created ?? this.created,
+        updated: updated ?? this.updated,
         favourite: favourite ?? this.favourite,
         mentalHealth: mentalHealth ?? this.mentalHealth,
+        physicalHealth: physicalHealth ?? this.physicalHealth,
         fulfillment: fulfillment ?? this.fulfillment,
         awareness: awareness ?? this.awareness,
         joy: joy ?? this.joy,
@@ -93,38 +100,5 @@ class Moment {
         improvement: improvement ?? this.improvement,
         discovering: discovering ?? this.discovering,
         relationship: relationship ?? this.relationship);
-  }
-
-  String getMomentDescriptionWithCategoryTags() {
-    String descriptionWithCategoryTags = description;
-    descriptionWithCategoryTags += '\n\n';
-    if (mentalHealth) {
-      descriptionWithCategoryTags += ' ${t.mental_health}';
-    }
-    if (fulfillment) {
-      descriptionWithCategoryTags += ' ${t.fulfillment}';
-    }
-    if (awareness) {
-      descriptionWithCategoryTags += ' ${t.awareness}';
-    }
-    if (joy) {
-      descriptionWithCategoryTags += ' ${t.joy}';
-    }
-    if (habit) {
-      descriptionWithCategoryTags += ' ${t.habit}';
-    }
-    if (goal) {
-      descriptionWithCategoryTags += ' ${t.goal}';
-    }
-    if (improvement) {
-      descriptionWithCategoryTags += ' ${t.improvement}';
-    }
-    if (discovering) {
-      descriptionWithCategoryTags += ' ${t.discovering}';
-    }
-    if (relationship) {
-      descriptionWithCategoryTags += ' ${t.relationship}';
-    }
-    return descriptionWithCategoryTags;
   }
 }

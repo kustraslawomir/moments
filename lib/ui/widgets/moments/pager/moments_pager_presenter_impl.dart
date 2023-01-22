@@ -60,9 +60,9 @@ class MomentsPagerPresenterImpl extends MomentsPagerPresenter {
         filteredMoments
             .addAll(moments.where((Moment element) => element.relationship));
         break;
-      case Filter.HEALTH:
+      case Filter.PHYSICAL_HEALTH:
         filteredMoments
-            .addAll(moments.where((Moment element) => element.mentalHealth));
+            .addAll(moments.where((Moment element) => element.physicalHealth));
         break;
     }
     return filteredMoments;
@@ -91,7 +91,7 @@ class MomentsPagerPresenterImpl extends MomentsPagerPresenter {
         return t.discovering;
       case Filter.RELATIONSHIP:
         return t.relationship;
-      case Filter.HEALTH:
+      case Filter.PHYSICAL_HEALTH:
         return t.health;
     }
   }

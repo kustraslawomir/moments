@@ -5,9 +5,11 @@ class MomentsFields {
     title,
     description,
     videoPath,
-    dateTime,
+    created,
+    updated,
     favourite,
     mentalHealth,
+    physicalHealth,
     fulfillment,
     awareness,
     joy,
@@ -22,9 +24,11 @@ class MomentsFields {
   static final String title = 'title';
   static final String description = 'description';
   static final String videoPath = 'video_path';
-  static final String dateTime = 'date_time';
+  static final String created = 'created';
+  static final String updated = 'updated';
   static final String favourite = 'favourite';
   static final String mentalHealth = 'mental_health';
+  static final String physicalHealth = 'physical_health';
   static final String fulfillment = 'fulfillment';
   static final String awareness = 'awareness';
   static final String joy = 'joy';

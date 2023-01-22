@@ -40,9 +40,11 @@ class MomentsDatabase {
   ${MomentsFields.title} $textType,
   ${MomentsFields.description} $textType,
   ${MomentsFields.videoPath} $textType,
-  ${MomentsFields.dateTime} $textType,
+  ${MomentsFields.created} $textType,
+  ${MomentsFields.updated} $textType,
   ${MomentsFields.favourite} $booleanType,
   ${MomentsFields.mentalHealth} $booleanType,
+  ${MomentsFields.physicalHealth} $booleanType,
   ${MomentsFields.fulfillment} $booleanType,
   ${MomentsFields.awareness} $booleanType,
   ${MomentsFields.joy} $booleanType,
@@ -101,7 +103,7 @@ class MomentsDatabase {
 
   Future<List<Moment>> readMoments() async {
     final Database database = await instance.database;
-    final String orderBy = '${MomentsFields.dateTime} DESC';
+    final String orderBy = '${MomentsFields.created} DESC';
 
     final List<Map<String, Object?>> maps = await database.query(MOMENTS_TABLE,
         columns: MomentsFields.values, orderBy: orderBy);

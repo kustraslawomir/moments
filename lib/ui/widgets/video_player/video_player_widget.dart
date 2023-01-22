@@ -1,5 +1,7 @@
 import 'package:cached_video_player/cached_video_player.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:moments/ui/widgets/video_player/video_player_configuration.dart';
 
 import '../../utils/ui_settings.dart';
 
@@ -22,9 +24,15 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
   @override
   void initState() {
     super.initState();
-    _controller = CachedVideoPlayerController.network(widget.videoUrl);
+    _controller = CachedVideoPlayerController.network(widget.videoUrl)
+      ..setVolume(VOLUME)
+      ..setPlaybackSpeed(PLAYBACK_SPEED);
+
     _controller.initialize().then((_) {
       if (widget.play) {
+        if (kDebugMode) {
+          print('Play: ${widget.videoUrl}');
+        }
         _controller.setLooping(true);
         _controller.play();
         setState(() {});

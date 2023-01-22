@@ -9,8 +9,10 @@ class ApiMoment {
     required this.title,
     required this.description,
     required this.videoPath,
-    required this.dateTime,
+    required this.created,
+    required this.updated,
     required this.mentalHealth,
+    required this.physicalHealth,
     required this.fulfillment,
     required this.awareness,
     required this.joy,
@@ -31,10 +33,12 @@ class ApiMoment {
   final String description;
   @JsonKey(name: 'video_path')
   final String videoPath;
-  @JsonKey(name: 'date_time')
-  final DateTime dateTime;
+  final DateTime created;
+  final DateTime updated;
   @JsonKey(name: 'mental_health')
   final bool mentalHealth;
+  @JsonKey(name: 'physical_health')
+  final bool physicalHealth;
   final bool fulfillment;
   final bool awareness;
   final bool joy;
