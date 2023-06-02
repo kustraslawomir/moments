@@ -37,6 +37,13 @@ class MomentsPagerState extends State<MomentsPagerWidget> {
   GlobalKey<ScrollSnapListState> sslKey = GlobalKey();
 
   @override
+  void initState() {
+    super.initState();
+    _videoPlayerPresenter
+        .updateCurrentVideoUrl(widget.moments.first.videoPath);
+  }
+
+  @override
   Widget build(BuildContext context) {
     return MultiProvider(
         providers: <ChangeNotifierProvider<ChangeNotifier>>[

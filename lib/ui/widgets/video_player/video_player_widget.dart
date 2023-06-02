@@ -29,10 +29,13 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
       ..setPlaybackSpeed(PLAYBACK_SPEED);
 
     _controller.initialize().then((_) {
+
+      if (kDebugMode) {
+        print('Play: ${widget.videoUrl} ${widget.play}');
+      }
+
       if (widget.play) {
-        if (kDebugMode) {
-          print('Play: ${widget.videoUrl}');
-        }
+
         _controller.setLooping(true);
         _controller.play();
         setState(() {});
